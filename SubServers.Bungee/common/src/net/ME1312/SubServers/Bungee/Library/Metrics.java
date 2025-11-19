@@ -3,7 +3,6 @@ package net.ME1312.SubServers.Bungee.Library;
 import net.ME1312.SubServers.Bungee.BungeeAPI;
 import net.ME1312.SubServers.Bungee.BungeeCommon;
 
-import gnu.trove.map.hash.TIntObjectHashMap;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -123,10 +122,10 @@ public class Metrics {
 
     private static final AdvancedPie PLAYER_VERSIONS;
     static {
-        final int[] PROTOCOL_VERSIONS;
+        Integer[] PROTOCOL_VERSIONS;
         final String[] PROTOCOL_NAMES;
         {
-            TIntObjectHashMap<String> protocols = new TIntObjectHashMap<String>();
+            LinkedHashMap<Integer, String> protocols = new LinkedHashMap<>();
             try {
                 for (Field f : ProtocolConstants.class.getDeclaredFields()) {
                     int fm = f.getModifiers();
@@ -137,7 +136,7 @@ public class Metrics {
             } catch (Throwable e) {
                 e.printStackTrace();
             }
-            PROTOCOL_VERSIONS = protocols.keys();
+            PROTOCOL_VERSIONS = protocols.keySet().toArray(new Integer[0]);
             PROTOCOL_NAMES = new String[PROTOCOL_VERSIONS.length];
 
             Arrays.sort(PROTOCOL_VERSIONS);

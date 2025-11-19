@@ -315,13 +315,13 @@ public abstract class UIRenderer {
                 // int
                 Matcher matcher = Pattern.compile("(?i)^(\\d+)$").matcher(item.value);
                 if (matcher.find()) {
-                    return new ItemStack(Integer.parseInt(matcher.group(1)), 1);
+                    return new ItemStack(Material.values()[Integer.parseInt(matcher.group(1))], 1);
                 }
                 // int:int
                 matcher.reset();
                 matcher = Pattern.compile("(?i)^(\\d+):(\\d+)$").matcher(item.value);
                 if (matcher.find()) {
-                    return new ItemStack(Integer.parseInt(matcher.group(1)), 1, Short.parseShort(matcher.group(2)));
+                    return new ItemStack(Material.values()[Integer.parseInt(matcher.group(1))], 1, Short.parseShort(matcher.group(2)));
                 }
             } catch (Exception e) {
                 return def;

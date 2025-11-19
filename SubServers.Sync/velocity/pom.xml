@@ -4,7 +4,7 @@
 
     <groupId>net.ME1312.SubServers</groupId>
     <artifactId>SubServers.Sync.Velocity</artifactId>
-    <version>-PLACEHOLDER</version>
+    <version>25w47a</version>
     <packaging>jar</packaging>
 
     <repositories>
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>com.velocitypowered</groupId>
             <artifactId>velocity-api</artifactId>
-            <version>3.1.0-SNAPSHOT</version>
+            <version>3.4.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -83,10 +83,10 @@
                             <goal>run</goal>
                         </goals>
                         <configuration>
-                            <tasks>
+                            <target>
                                 <mkdir dir="${project.build.directory}" />
                                 <copy file="${basedir}/../../LICENSE" todir="${project.build.directory}/classes" />
-                            </tasks>
+                            </target>
                         </configuration>
                     </execution>
                     <execution>
@@ -96,11 +96,11 @@
                             <goal>run</goal>
                         </goals>
                         <configuration>
-                            <tasks> <!-- Dependency Stripped Jar for Testing -->
+                            <target> <!-- Dependency Stripped Jar for Testing -->
                                 <jar destfile="${basedir}/../../Artifacts/Modulized/SubServers.Sync.jar" manifest="../src/META-INF/MANIFEST.MOD.MF">
                                     <zipfileset src="${basedir}/../../Artifacts/SubServers.Sync.jar" excludes="net/ME1312/Galaxi/** net/ME1312/SubData/**" />
                                 </jar>
-                            </tasks>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
@@ -139,7 +139,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.0</version>
@@ -169,7 +169,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
         </plugins>
     </build>
 </project>

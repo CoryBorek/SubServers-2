@@ -4,7 +4,7 @@
 
     <groupId>net.ME1312.SubServers</groupId>
     <artifactId>SubServers.Creator</artifactId>
-    <version>-PLACEHOLDER</version>
+    <version>25w47a</version>
     <packaging>pom</packaging>
 
     <!-- This module is a placeholder. It has no real maven artifacts. -->

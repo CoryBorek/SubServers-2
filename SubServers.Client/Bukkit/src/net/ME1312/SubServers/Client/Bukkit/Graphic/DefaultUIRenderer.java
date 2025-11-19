@@ -65,29 +65,29 @@ public class DefaultUIRenderer extends UIRenderer {
         windowHistory.remove(windowHistory.size() - 1);
         reopen();
     }
-/*
-    private static final String[] STAINED_GLASS_INDEX = new String[] {
-            "WHITE_STAINED_GLASS_PANE",
-            "ORANGE_STAINED_GLASS_PANE",
-            "MAGENTA_STAINED_GLASS_PANE",
-            "LIGHT_BLUE_STAINED_GLASS_PANE",
-            "YELLOW_STAINED_GLASS_PANE",
-            "LIME_STAINED_GLASS_PANE",
-            "PINK_STAINED_GLASS_PANE",
-            "GRAY_STAINED_GLASS_PANE",
-            "LIGHT_GRAY_STAINED_GLASS_PANE",
-            "CYAN_STAINED_GLASS_PANE",
-            "PURPLE_STAINED_GLASS_PANE",
-            "BLUE_STAINED_GLASS_PANE",
-            "BROWN_STAINED_GLASS_PANE",
-            "GREEN_STAINED_GLASS_PANE",
-            "RED_STAINED_GLASS_PANE",
-            "BLACK_STAINED_GLASS_PANE"
-    }; */
+
+    private static final Material[] STAINED_GLASS_INDEX = new Material[] {
+            Material.WHITE_STAINED_GLASS_PANE,
+            Material.ORANGE_STAINED_GLASS_PANE,
+            Material.MAGENTA_STAINED_GLASS_PANE,
+            Material.LIGHT_BLUE_STAINED_GLASS_PANE,
+            Material.YELLOW_STAINED_GLASS_PANE,
+            Material.LIME_STAINED_GLASS_PANE,
+            Material.PINK_STAINED_GLASS_PANE,
+            Material.GRAY_STAINED_GLASS_PANE,
+            Material.LIGHT_GRAY_STAINED_GLASS_PANE,
+            Material.CYAN_STAINED_GLASS_PANE,
+            Material.PURPLE_STAINED_GLASS_PANE,
+            Material.BLUE_STAINED_GLASS_PANE,
+            Material.BROWN_STAINED_GLASS_PANE,
+            Material.GREEN_STAINED_GLASS_PANE,
+            Material.RED_STAINED_GLASS_PANE,
+            Material.BLACK_STAINED_GLASS_PANE
+    };
     private ItemStack color(int color) {
         try {
 //          if (plugin.api.getGameVersion().compareTo(new Version("1.13")) < 0) {
-                return new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) color);
+                return new ItemStack(STAINED_GLASS_INDEX[color], 1);
 //          } else {
 //              return new ItemStack((Material) Material.class.getMethod("getMaterial", String.class, boolean.class).invoke(null, STAINED_GLASS_INDEX[color], false), 1);
 //          }

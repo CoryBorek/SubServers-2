@@ -17,7 +17,7 @@ public class LegacyServerMap extends CaseInsensitiveMap<ServerInfo> {
     }
 
     public LegacyServerMap(Map<String, ServerInfo> map) {
-        for (Entry<String, ServerInfo> e : map.entrySet()) super.put(e.getKey(), e.getValue());
+        for (Map.Entry<String, ServerInfo> e : map.entrySet()) super.put(e.getKey(), e.getValue());
     }
 
     @SuppressWarnings("deprecation")

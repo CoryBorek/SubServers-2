@@ -4,7 +4,7 @@
 
     <groupId>net.ME1312.SubServers</groupId>
     <artifactId>SubServers.Bungee.Common</artifactId>
-    <version>-PLACEHOLDER</version>
+    <version>25w47a</version>
     <packaging>jar</packaging>
 
     <repositories>
@@ -20,9 +20,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>net.md_5</groupId>
-            <artifactId>bungeecord-internal</artifactId>
-            <version>1.15-SNAPSHOT</version>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-proxy</artifactId>
+            <version>1.21-R0.5-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.21-R0.5-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -64,10 +70,10 @@
                             <goal>run</goal>
                         </goals>
                         <configuration>
-                            <tasks>
+                            <target>
                                 <mkdir dir="${project.build.directory}" />
                                 <copy file="${basedir}/../../LICENSE" todir="${project.build.directory}/classes" />
-                            </tasks>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
@@ -81,7 +87,7 @@
                     <outputDirectory>../../Artifacts/Maven</outputDirectory>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.0</version>
@@ -106,7 +112,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
         </plugins>
     </build>
 </project>
